@@ -1,0 +1,5 @@
+<h4><%= link_to post.title, post_path(post) %></h4>
+<p><%= truncate(post.content, length: 200)  %></p>
+<div class="actions">
+  <%= render "post_actions", post: post %>
+</div>
