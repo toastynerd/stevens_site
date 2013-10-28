@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.save
       flash[:notice] = "Post has been created"
-      redirect_to :back
+      redirect_to posts_path
     else
       flash[:alert] = "Could not create post"
       render action: :new
