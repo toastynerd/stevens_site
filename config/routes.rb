@@ -3,5 +3,7 @@ RailsBlog::Application.routes.draw do
 
   resources :posts
 
+  resources :pages
+
   root to: "posts#index"
 end

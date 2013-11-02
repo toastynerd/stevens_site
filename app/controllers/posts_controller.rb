@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authorize_admin, only: [:new, :create, :edit, :update, :destroy]
   before_action :find_post, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -52,5 +53,12 @@ private
 
   def find_post
     @post = Post.find(params[:id])
+  end
+
+  def authorize_admin
+    unless current_user.admin?
+      flash[:alert] = "You need to be admin to do that"
+      redirect_to :back
+    end
   end
 end

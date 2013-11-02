@@ -1,0 +1,7 @@
+<h2><%= @page.title %></h2>
+<%= markdown(@page.content) %>
+<% unless current_user.blank? %>
+<% if current_user.admin? %>
+  <%= render "page_actions", page: @page %>
+<% end %>
+<% end %>

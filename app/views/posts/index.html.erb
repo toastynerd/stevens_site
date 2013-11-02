@@ -1,4 +1,7 @@
 <h2>Posts Placeholder</h2>
+<% unless current_user.blank? %>
+<% if current_user.admin? %>
+  <%= link_to "Create a New Post", new_post_path, class: "button expand" %>
+<% end %>
+<% end %>
 <%= render partial: "post", collection: @posts %>
-
-<%= link_to "Create a New Post", new_post_path %>

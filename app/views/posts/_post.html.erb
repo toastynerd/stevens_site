@@ -1,7 +1,11 @@
 <div class="panel">
 <h4><%= link_to post.title, post_path(post) %></h4>
-<p><%= truncate(post.content, length: 200)  %></p>
-<div class="actions">
-  <%= render "post_actions", post: post %>
-</div>
+<%= truncate(markdown(post.content), length: 200)  %>
+<% unless current_user.blank? %>
+<% if current_user.admin? %>
+  <div class="actions">
+    <%= render "post_actions", post: post %>
+  </div>
+<% end %>
+<% end %>
 </div>

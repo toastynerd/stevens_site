@@ -24,7 +24,13 @@
   <body>
 
     <div class="row">
-      <div class="colum-large-8">
+      <div class="columns large-10">
+      <%= render "layouts/nav_header" %>
+      <% flash.each do |key, value| %>
+          <div id="<%= key %>" class="flash">
+            <%= value %>
+          </div>
+      <% end %>
       <%= yield %>
       </div>
     </div>
