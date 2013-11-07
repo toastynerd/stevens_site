@@ -27,7 +27,7 @@ class PagesController < ApplicationController
   end
 
   def update
-    if @page.update_attributes(post_params)
+    if @page.update_attributes(page_params)
       flash[:notice] = "Page successfulyy update"
       redirect_to @page
     else

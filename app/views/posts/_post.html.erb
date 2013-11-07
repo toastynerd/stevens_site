@@ -1,6 +1,6 @@
 <div class="panel">
 <h4><%= link_to post.title, post_path(post) %></h4>
-<%= markdown(truncate(post.content, length: 200))  %>
+<%= markdown post.content  %>
 <% unless current_user.blank? %>
 <% if current_user.admin? %>
   <div class="actions">
