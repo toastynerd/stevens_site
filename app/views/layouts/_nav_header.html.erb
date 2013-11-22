@@ -1,5 +1,11 @@
 <nav class="top-bar">
   <ul class="title-area">
+    <li class="image">
+      <%= image_tag 'ShadowCut.png',size: "50x50" %>
+    </li>
+
+  </ul>
+  <ul class="left">
     <li class="name">
       <h1><%= link_to "Steven Bateman", root_path %></h1>
     </li>
@@ -14,11 +20,9 @@
            <li><%= link_to "New Page", new_page_path, class: "active" %></li>
         <% end %>
     <% end %>
-    <li class="divider"></li>
+
     <% if current_user %>
       <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-    <% else %>
-      <li><%= link_to "Sign In", new_user_session_path %></li>
     <% end %>
   </ul>
   </section>

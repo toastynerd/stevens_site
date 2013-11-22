@@ -30,7 +30,7 @@ gem 'devise'
 
 gem "simple_form"
 
-gem 'zurb-foundation'
+gem 'zurb-foundation', "~> 4.3"
 
 gem 'redcarpet'
 

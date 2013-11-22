@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
 
 private
   def find_pages
-    @pages = Page.all
+    @pages = Page.all.order(:updated_at).reverse_order
   end
 end
