@@ -1,3 +1,4 @@
+<div>
 <h2 class="text-center"><%= @page.title %></h2>
 <%= markdown(@page.content) %>
 <% unless current_user.blank? %>
@@ -5,3 +6,4 @@
   <%= render "page_actions", page: @page %>
 <% end %>
 <% end %>
+<div>
