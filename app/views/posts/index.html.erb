@@ -1,4 +1,4 @@
-<h2 class="text-center">Posts</h2>
+<h2 class="text-center">News</h2>
 <% unless current_user.blank? %>
 <% if current_user.admin? %>
   <%= link_to "Create a New Post", new_post_path, class: "button expand" %>
